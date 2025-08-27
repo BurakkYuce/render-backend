@@ -49,14 +49,16 @@ if (process.env.NODE_ENV === "production") {
 // General rate limiting
 app.use(rateLimits.general);
 
-// CORS middleware (after security headers)
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL || "http://localhost:3000",
-      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://frontonly-4apzhvrxy-mitcars-projects.vercel.app",
+      "https://your-frontend-domain.vercel.app", // ileride değişirse diye
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
