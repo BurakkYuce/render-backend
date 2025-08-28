@@ -55,6 +55,9 @@ app.use(
     origin: [
       "https://frontonly-4apzhvrxy-mitcars-projects.vercel.app",
       "https://frontonly.vercel.app", // YENİ URL EKLE
+      "https://frontonly-7l52girmc-mitcars-projects.vercel.app/",
+      "https://frontonly-burakkyuce-mitcars-projects.vercel.app/",
+      "https://frontonly-1bfh06fo4-mitcars-projects.vercel.app/",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
