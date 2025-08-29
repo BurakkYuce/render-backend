@@ -50,20 +50,20 @@ if (process.env.NODE_ENV === "production") {
 app.use(rateLimits.general);
 
 // CORS middleware (after security headers)
+const cors = require("cors");
+
 app.use(
   cors({
     origin: [
-      "https://frontonly-4apzhvrxy-mitcars-projects.vercel.app",
-      "https://frontonly.vercel.app", // YENİ URL EKLE
-      "https://frontonly-7l52girmc-mitcars-projects.vercel.app/",
-      "https://frontonly-burakkyuce-mitcars-projects.vercel.app/",
-      "https://frontonly-1bfh06fo4-mitcars-projects.vercel.app/",
+      /\.vercel\.app$/, // tüm vercel.app subdomainleri
+      /\.onrender\.com$/, // tüm render.com subdomainleri
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 // Body parsing middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
