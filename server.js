@@ -49,9 +49,6 @@ if (process.env.NODE_ENV === "production") {
 // General rate limiting
 app.use(rateLimits.general);
 
-// CORS middleware (after security headers)
-const cors = require("cors");
-
 app.use(
   cors({
     origin: [
