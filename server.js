@@ -54,6 +54,9 @@ app.use(
     origin: [
       /\.vercel\.app$/, // tüm vercel.app subdomainleri
       /\.onrender\.com$/, // tüm render.com subdomainleri
+            'https://mitcarrental.com',
+      'https://www.mitcarrental.com',
+
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
